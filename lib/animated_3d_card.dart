@@ -81,20 +81,18 @@ class CustomAnimated3DCardState extends State<CustomAnimated3DCard>
         child: Stack(
           clipBehavior: Clip.none,
           children: [
-            AnimatedPositioned(
-              duration: const Duration(milliseconds: 500),
-              child: Transform(
-                alignment: FractionalOffset.center,
+            Positioned(
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 500),
+                transformAlignment: FractionalOffset.center,
                 transform: Matrix4.identity()
                   ..setEntry(3, 2, 0.0001)
                   ..rotateX(_controller.value * -1),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      image: NetworkImage(widget.coverImage),
-                      fit: BoxFit.cover,
-                    ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  image: DecorationImage(
+                    image: NetworkImage(widget.coverImage),
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),

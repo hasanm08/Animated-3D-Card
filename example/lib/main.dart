@@ -1,5 +1,13 @@
-import 'package:animated_3d_card/animated_3d_card.dart';
+import 'package:animated_3d_card/animated_3d_card.dart'
+    show CustomAnimated3DCard;
 import 'package:flutter/material.dart';
+Future<void> main() async {
+  runApp(MaterialApp(
+    builder: (context, child) {
+      return const MyApp();
+    },
+  ));
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
